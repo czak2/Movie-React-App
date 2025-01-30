@@ -57,7 +57,7 @@ function Header() {
               <IoSearchOutline />
             </button>
           </form>
-          <div className="w-8 h-8 rounded-full cursor-pointer active:scale-50 transition-all overflow-hidden">
+          <div className="w-9 h-9 rounded-full cursor-pointer active:scale-50 transition-all overflow-hidden">
             <img src={user} alt="user" className="w-full h-full" />
           </div>
         </div>
