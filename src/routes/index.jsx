@@ -22,10 +22,10 @@ const routes = createBrowserRouter([
         path: ":explore/:id",
         element: <DetailsPage></DetailsPage>,
       },
-      {
-        path: ":explore",
-        element: <ExplorePage></ExplorePage>,
-      },
+      // {
+      //   path: ":explore",
+      //   element: <ExplorePage></ExplorePage>,
+      // },
       {
         path: "search",
         element: <SearchPage></SearchPage>,
