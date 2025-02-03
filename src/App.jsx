@@ -14,17 +14,30 @@ function App() {
     try {
       const response = await axios.get("/trending/all/week");
       dispatch(movieoActions.setBannerData(response.data.results));
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
   };
+  const fetchConfiguration = async () => {
+    try {
+      const response = await axios.get("/configuration");
+      dispatch(
+        movieoActions.setImageUrl(
+          response.data.images.secure_base_url + "original"
+        )
+      );
+      console.log(response.data.images.secure_base_url + "original");
+    } catch (error) {}
+  };
   useEffect(() => {
     fetchTrendingData();
+    fetchConfiguration();
   }, []);
   return (
     <main className="pb-14 lg:pb-0">
       <Header></Header>
-      <div className="mt-16">
+      <div className="">
         <Outlet></Outlet>
       </div>
 
