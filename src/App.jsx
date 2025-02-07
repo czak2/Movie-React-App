@@ -14,7 +14,7 @@ function App() {
     try {
       const response = await axios.get("/trending/all/week");
       dispatch(movieoActions.setBannerData(response.data.results));
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }

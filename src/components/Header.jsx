@@ -6,7 +6,8 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 function Header() {
   const location = useLocation();
-  const removeSpace = location?.search?.slice(3)?.split("%20")?.join(" ");
+  //const removeSpace = location?.search?.slice(3)?.split("%20")?.join(" ");
+  const removeSpace = decodeURIComponent(location?.search?.slice(3) || "");
 
   const [searchInput, setSearchInput] = useState(removeSpace);
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ function Header() {
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
-            <button className="text-2xl text-white">
+            <button className="text-2xl text-white hidden lg:block">
               <IoSearchOutline />
             </button>
           </form>
